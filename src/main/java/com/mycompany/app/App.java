@@ -85,7 +85,7 @@ public class App {
 
             String input1 = req.queryParams("input1");
             ArrayList<Integer> inputList1 = new ArrayList<>();
-            if(input1 == null) {
+            if(input1.equals("")) {
                 inputList1.add(0);
             }
             else {
@@ -100,7 +100,7 @@ public class App {
 
             String input2 = req.queryParams("input2");
             ArrayList<Integer> inputList2 = new ArrayList<>();
-            if(input2 == null) {
+            if(input2.equals("")) {
                 inputList2.add(0);
             }
             else {
@@ -115,7 +115,7 @@ public class App {
 
             String input3 = req.queryParams("input3");
             ArrayList<String> stringInputList = new ArrayList<>();
-            if(input3 == null) {
+            if(input3.equals("")) {
                 stringInputList.add(null);
             }
             else {
@@ -129,7 +129,7 @@ public class App {
 
             String input4 = req.queryParams("input4");
             int intInput;
-            if(input4 == null) {
+            if(input4.equals("")) {
                 intInput = 0;
             }
             else {
