@@ -5,7 +5,7 @@ All strings in string array are encrypted using 3 encryption keys and returned.
 
 ###Steps:
 
-* App takes 4 parameters: 2 arrays, 1 integer and a string array.
+* App takes 4 parameters: 2 ArrayLists, 1 integer and a string array.
 * Integer parameter's modulo of 128 is Key 0
 * Integer arrays' elements' modulo of 128 are calculated individually.
 ** These individual numbers's arithmetic average generates Key1 and Key2
