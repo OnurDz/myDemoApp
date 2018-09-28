@@ -120,9 +120,9 @@ public class App {
 
             String[] result = App.encrypt(inputList1, inputList2, stringInputList, intInput);
 
-            Map map = new HashMap();
-            map.put("result", result);
-            return new ModelAndView(map, "compute.mustache");
+            //Map map = new HashMap();
+            //map.put("result", result);
+            return new ModelAndView(result, "compute.mustache");
         }, new MustacheTemplateEngine());
 
 
