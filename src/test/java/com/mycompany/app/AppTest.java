@@ -3,6 +3,7 @@ package com.mycompany.app;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import java.util.*;
 
 /**
  * Unit test for simple App.
@@ -37,11 +38,30 @@ public class AppTest
     }
 
    public void testIntegrity() {
-        String[] sArray = {"BIL481", "YAZILIM MUHENDISLIGI", null, "Hello world!"};
-		int[] arr1 = {43, 324, 435, 32, 6, 321535, 34};
-		int[] arr2 = {542, 0, 0, 4351};
+        ArrayList<String> sList = new ArrayList<>();
+        sList.add("BIL481");
+        sList.add("YAZILIM MUHENDISLIGI");
+        sList.add(null);
+        sList.add("Hello world!");
+
+        ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(43);
+        list1.add(324);
+        list1.add(435);
+        list1.add(32);
+        list1.add(6);
+        list1.add(321535);
+        list1.add(34);
+
+        ArrayList<Integer> list2 = new ArrayList<>();
+        list2.add(542);
+        list2.add(0);
+        list2.add(0);
+        list2.add(4351);
+
 		int key0 = 7;
-        String[] testString = App.encrypt(arr1, arr2, sArray, key0);
+        
+        String[] testString = App.encrypt(list1, list2, sList, key0);
         
         assertEquals(testString[0], "QUVJLI");
         assertEquals(testString[1], "]Q]UVUW@W[TSWRUZVUTU");
@@ -50,11 +70,30 @@ public class AppTest
     }
 
     public void testNullStrings() {
-        String[] sArray = {null, null, null};
-		int[] arr1 = {43, 324, 435, 32, 6, 321535, 34};
-		int[] arr2 = {542, 0, 0, 4351};
+        ArrayList<String> sList = new ArrayList<>();
+        sList.add(null);
+        sList.add(null);
+        sList.add(null);
+        sList.add(null);
+
+		ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(43);
+        list1.add(324);
+        list1.add(435);
+        list1.add(32);
+        list1.add(6);
+        list1.add(321535);
+        list1.add(34);
+
+		ArrayList<Integer> list2 = new ArrayList<>();
+        list2.add(542);
+        list2.add(0);
+        list2.add(0);
+        list2.add(4351);
+
 		int key0 = 7;
-        String[] testString = App.encrypt(arr1, arr2, sArray, key0);
+        
+        String[] testString = App.encrypt(list1, list2, sList, key0);
 
         assertEquals(testString[0], null);
         assertEquals(testString[1], null);
@@ -62,11 +101,20 @@ public class AppTest
     }
 
     public void testZeroKey() {
-        String[] sArray = {"Onur", "Demirezen", "TOBB ETU"};
-		int[] arr1 = {0};
-		int[] arr2 = {0};
-		int key0 = 0;
-        String[] testString = App.encrypt(arr1, arr2, sArray, key0);
+        ArrayList<String> sList = new ArrayList<>();
+        sList.add("Onur");
+        sList.add("Demirezen");
+        sList.add("TOBB ETU");
+
+        ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(0);
+
+        ArrayList<Integer> list2 = new ArrayList<>();
+        list2.add(0);
+        
+        int key0 = 0;
+        
+        String[] testString = App.encrypt(list1, list2, sList, key0);
 
         assertEquals(testString[0], "Onur");
         assertEquals(testString[1], "Demirezen");
@@ -74,11 +122,30 @@ public class AppTest
     }
 
     public void testOneLength() {
-        String[] sArray = {"B", "Y", "!", "7"};
-		int[] arr1 = {43, 324, 435, 32, 6, 321535, 34};
-		int[] arr2 = {542, 0, 0, 4351};
-		int key0 = 7;
-        String[] testString = App.encrypt(arr1, arr2, sArray, key0);
+        ArrayList<String> sList = new ArrayList<>();
+        sList.add("B");
+        sList.add("Y");
+        sList.add("!");
+        sList.add("7");
+
+		ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(43);
+        list1.add(324);
+        list1.add(435);
+        list1.add(32);
+        list1.add(6);
+        list1.add(321535);
+        list1.add(34);
+
+		ArrayList<Integer> list2 = new ArrayList<>();
+        list2.add(542);
+        list2.add(0);
+        list2.add(0);
+        list2.add(4351);
+
+        int key0 = 7;
+        
+        String[] testString = App.encrypt(list1, list2, sList, key0);
 
         assertEquals(testString[0], "Q");
         assertEquals(testString[1], "]");
@@ -87,11 +154,28 @@ public class AppTest
     }
 
     public void testSameInput() {
-        String[] sArray = {"Demirezen", "Demirezen"};
-		int[] arr1 = {43, 324, 435, 32, 6, 321535, 34};
-		int[] arr2 = {542, 0, 0, 4351};
-		int key0 = 7;
-        String[] testString = App.encrypt(arr1, arr2, sArray, key0);
+        ArrayList<String> sList = new ArrayList<>();
+        sList.add("Demirezen");
+        sList.add("Demirezen");
+
+		ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(43);
+        list1.add(324);
+        list1.add(435);
+        list1.add(32);
+        list1.add(6);
+        list1.add(321535);
+        list1.add(34);
+
+		ArrayList<Integer> list2 = new ArrayList<>();
+        list2.add(542);
+        list2.add(0);
+        list2.add(0);
+        list2.add(4351);
+
+        int key0 = 7;
+        
+        String[] testString = App.encrypt(list1, list2, sList, key0);
         
         assertTrue(testString[0].equals(testString[1]));
     }
