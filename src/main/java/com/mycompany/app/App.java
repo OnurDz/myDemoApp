@@ -84,39 +84,60 @@ public class App {
             */
 
             String input1 = req.queryParams("input1");
-            java.util.Scanner sc1 = new java.util.Scanner(input1);
-            sc1.useDelimiter("[;\r\n]+");
             ArrayList<Integer> inputList1 = new ArrayList<>();
-            while(sc1.hasNext()) {
-                int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
-                inputList1.add(value);
+            if(input1 == null) {
+                inputList1.add(0);
             }
-            sc1.close();
+            else {
+                java.util.Scanner sc1 = new java.util.Scanner(input1);
+                sc1.useDelimiter("[;\r\n]+");
+                while(sc1.hasNext()) {
+                    int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
+                    inputList1.add(value);
+                }
+                sc1.close();
+            }
 
             String input2 = req.queryParams("input2");
-            java.util.Scanner sc2 = new java.util.Scanner(input2);
-            sc2.useDelimiter("[;\r\n]+");
             ArrayList<Integer> inputList2 = new ArrayList<>();
-            while(sc2.hasNext()) {
-                int value = Integer.parseInt(sc2.next().replaceAll("\\s",""));
-                inputList2.add(value);
+            if(input2 == null) {
+                inputList2.add(0);
             }
-            sc2.close();
+            else {
+                java.util.Scanner sc2 = new java.util.Scanner(input2);
+                sc2.useDelimiter("[;\r\n]+");
+                while(sc2.hasNext()) {
+                    int value = Integer.parseInt(sc2.next().replaceAll("\\s",""));
+                    inputList2.add(value);
+                }
+                sc2.close();
+            }
 
             String input3 = req.queryParams("input3");
-            java.util.Scanner sc3 = new java.util.Scanner(input3);
             ArrayList<String> stringInputList = new ArrayList<>();
-            while(sc3.hasNext()) {
-                String value = sc3.nextLine();
-                stringInputList.add(value);
+            if(input3 == null) {
+                stringInputList.add(null);
             }
-            sc3.close();
+            else {
+                java.util.Scanner sc3 = new java.util.Scanner(input3);
+                while(sc3.hasNext()) {
+                    String value = sc3.nextLine();
+                    stringInputList.add(value);
+                }
+                sc3.close();
+            }
 
             String input4 = req.queryParams("input4");
-            java.util.Scanner sc4 = new java.util.Scanner(input4);
-            sc4.useDelimiter("[;\r\n]+");
-            int intInput = Integer.parseInt(sc4.next().replaceAll("\\s",""));
-            sc4.close();
+            int intInput;
+            if(input4 == null) {
+                intInput = 0;
+            }
+            else {
+                java.util.Scanner sc4 = new java.util.Scanner(input4);
+                sc4.useDelimiter("[;\r\n]+");
+                intInput = Integer.parseInt(sc4.next().replaceAll("\\s",""));
+                sc4.close();
+            }
 
             String[] resultArray = App.encrypt(inputList1, inputList2, stringInputList, intInput);
             String result = "[ ";
