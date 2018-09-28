@@ -147,6 +147,9 @@ public class App {
             }
             result = result.substring(0, result.length() - 2) + " ]";
 
+            if(resultArray.length == 0)
+                result = "[ ]";
+
             Map map = new HashMap();
             map.put("result", result);
 
