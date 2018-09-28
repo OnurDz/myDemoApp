@@ -119,11 +119,12 @@ public class App {
             sc4.close();
 
             String[] resultArray = App.encrypt(inputList1, inputList2, stringInputList, intInput);
-            String result = "";
+            String result = "[ ";
 
             for(int i = 0; i < resultArray.length; i++) {
-                result = result + resultArray[i] + "\n";
+                result = result + resultArray[i] + ", ";
             }
+            result = result.substring(0, result.length() - 2) + " ]";
 
             Map map = new HashMap();
             map.put("result", result);
