@@ -13,3 +13,5 @@ All strings in string array are encrypted using 3 encryption keys and returned.
 * Strings' characters' ASCII values' and master key's average is calculated individually.
 ** Averages' modulo of 128 generates new chars.
 *** New strings are generated using new chars and returned.
+
+[![Build Status](https://travis-ci.org/OnurDz/myDemoApp.svg?branch=master)](https://travis-ci.org/OnurDz/myDemoApp)
