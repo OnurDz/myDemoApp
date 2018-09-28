@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/OnurDz/myDemoApp.svg?branch=master)](https://travis-ci.org/OnurDz/myDemoApp)
+
 ########## TOBB ETU BIL481 Fall 2018-2019 Homework Assignment 1 ##########
 
 App takes a string array to be encrypted, 2 integer arrays and 1 integer as encryption keys.
@@ -14,4 +16,4 @@ All strings in string array are encrypted using 3 encryption keys and returned.
 ** Averages' modulo of 128 generates new chars.
 *** New strings are generated using new chars and returned.
 
-[![Build Status](https://travis-ci.org/OnurDz/myDemoApp.svg?branch=master)](https://travis-ci.org/OnurDz/myDemoApp)
+Demo site: https://immense-fortress-73718.herokuapp.com/compute
