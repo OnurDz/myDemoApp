@@ -118,12 +118,16 @@ public class App {
             int intInput = Integer.parseInt(sc4.next().replaceAll("\\s",""));
             sc4.close();
 
-            String[] result = App.encrypt(inputList1, inputList2, stringInputList, intInput);
+            String[] resultArray = App.encrypt(inputList1, inputList2, stringInputList, intInput);
+            String result = "";
+
+            for(int i = 0; i < resultArray.length; i++) {
+                result = result + resultArray[i] + "\n";
+            }
 
             Map map = new HashMap();
-            for(int i = 0; i < result.length; i++) {
-                map.put("result", result[i]);
-            }
+            map.put("result", result);
+
             return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
